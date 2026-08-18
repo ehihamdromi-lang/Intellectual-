@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Group - Team Members</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f2f5;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 50px;
+        }
+        
+        .hero h1 {
+            font-weight: 700;
+            font-size: 3.5rem;
+        }
+        
+        /* Member Cards */
+        .member-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .member-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 4px solid #667eea;
+        }
+        
+        .member-card .card-body {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .member-card .card-title {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .member-card .role {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .member-card .bio {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .member-card .social-links a {
+            color: #4a5568;
+            margin: 0 8px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .member-card .social-links a:hover {
+            color: #667eea;
+        }
+        
+        /* Badge styles */
+        .badge-custom {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 3px;
+        }
+        
+        /* Team Stats */
+        .stats-section {
+            background: white;
+            padding: 40px 0;
+            margin: 50px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 30px 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero {
+                padding: 50px 0;
+            }
+            .member-card img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-users me-2"></i>Team Connect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#members">Members</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Group</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Meet Our Team</h1>
+            <p class="lead mb-4">A passionate group of individuals working together to achieve greatness</p>
+            <a href="#members" class="btn btn-light btn-lg px-5">
+                <i class="fas fa-arrow-down me-2"></i>View Members
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6">
+                    <div class="stat-number" id="memberCount">0</div>
+                    <p class="text-muted">Team Members</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-number">4+</div>
+                    <p class="text-muted">Skills Combined</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-number">100%</div>
+                    <p class="text-muted">Collaboration</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-number">24/7</div>
+                    <p class="text-muted">Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section id="members" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Our Team Members</h2>
+                <p class="text-muted">Get to know the amazing people behind our group work</p>
+                <div class="divider mx-auto" style="width: 60px; height: 3px; background: #667eea;"></div>
+            </div>
+
+            <div class="row" id="membersContainer">
+                <!-- Member 1 - Replace with your data -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="member-card">
+                        <img src="https://via.placeholder.com/400x300/667eea/FFFFFF?text=Member+1" alt="Member Name">
+                        <div class="card-body">
+                            <h5 class="card-title"> Grace Tetteh</h5>
+                            <p class="role"><i class="fas fa-user-tie me-2"></i>Group Leader</p>
+                            <p class="bio">Very discipline ,passionate about what she does , crazily intelligent and tge mastermind behind this website</p>
+                            <div class="mb-3">
+                                <span class="badge-custom">intergrity</span>
+                                <span class="badge-custom">respect</span>
+                                <span class="badge-custom">equity</span>
+                            </div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="member-card">
+                        <img src="https://via.placeholder.com/400x300/764ba2/FFFFFF?text=Member+2" alt="Member Name">
+                        <div class="card-body">
+                            <h5 class="card-title"> Biyaa Faustina</h5>
+                            <p class="role"><i class="fas fa-palette me-2"></i>Secretary</p>
+                            <p class="bio">The fastest writter in the group , very calm and respectfull. Keeps adequate records of every meeting and very honestvin her doing.</p>
+                            <div class="mb-3">
+                                <span class="badge-custom">focus</span>
+                                <span class="badge-custom">black beauty</span>
+                                <span class="badge-custom">dignity</span>
+                            </div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="member-card">
+                        <img src="https://via.placeholder.com/400x300/e74c3c/FFFFFF?text=Member+3" alt="Member Name">
+                        <div class="card-body">
+                            <h5 class="card-title"> Phyllis Baidoo</h5>
+                            <p class="role"><i class="fas fa-code me-2"></i>financial secertary</p>
+                            <p class="bio">Keeps all the groups money safe. Ensures everything runs smoothly.Provides our wants and needs .</p>
+                            <div class="mb-3">
+                                <span class="badge-custom">competent</span>
+                                <span class="badge-custom">Resourcefull</span>
+                                <span class="badge-custom"> mannered</span>                               
+                            </div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="member-card">
+                        <img src="https://via.placeholder.com/400x300/2ecc71/FFFFFF?text=Member+4" alt="Member Name">
+                        <div class="card-body">
+                            <h5 class="card-title">Gladys Tronu</h5>
+                            <p class="role"><i class="fas fa-chart-line me-2"></i>Group Manager</p>
+                            <p class="bio">make sue thinGs are in other . and every thing are well presented.</p>
+                            <div class="mb-3">
+                                <span class="badge-custom">Accurate</span>
+                                <span class="badge-custom">organized</span>
+                                <span class="badge-custom">Frantic</span>
+                            </div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="member-card">
+                        <img src="https://via.placeholder.com/400x300/3498db/FFFFFF?text=Member+5" alt="Member Name">
+                        <div class="card-body">
+                            <h5 class="card-title">Hannah Nimah</h5>
+                            <p class="role"><i class="fas fa-mobile-alt me-2"></i>code writer</p>
+                            <p class="bio">Wrote the code for the group work and made sure it run as expected</p>
+                            <div class="mb-3">
+                                <span class="badge-custom">fast</span>
+                                <span class="badge-custom">Good</span>
+                                <span class="badge-custom">Swift</span>
+                            </div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-android"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="member-card">
+                        <img src="https://via.placeholder.com/400x300/9b59b6/FFFFFF?text=Member+6" alt="Member Name">
+                        <div class="card-body">
+                            <h5 class="card-title">Patience Adzanyo</h5>
+                            <p class="role"><i class="fas fa-bullhorn me-2"></i>Content Uplaoder</p>
+                            <p class="bio"> Creates compelling content that engages our audience.And uploaded al the groups work to the internet</p>
+                            <div class="mb-3">
+                                <span class="badge-custom">Content Writing</span>
+                                <span class="badge-custom">Perfectionist</span>
+                                <span class="badge-custom">Socially equiped</span>
+                            </div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-medium"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+       <div class="col-lg-4 col-md-6">
+                    <div class="member-card">
+                        <img src="https://via.placeholder.com/400x300/9b59b6/FFFFFF?text=Member+6" alt="Member Name">
+                        <div class="card-body">
+                            <h5 class="card-title">Shirley Adjei Tachie</h5>
+                            <p class="role"><i class="fas fa-bullhorn me-2"></i>Group Member</p>
+                            <p class="bio">Contribute to group discussions . And help to do everything the group does.</p>
+                            <div class="mb-3">
+                                <span class="badge-custom">Content Writing</span>
+                                <span class="badge-custom">Perfectionist</span>
+                                <span class="badge-custom">Socially equiped</span>
+                            </div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-medium"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Group Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-6 fw-bold mb-4">About Our Group</h2>
+                    <p class="lead">We are a group of 2AS3 students showcasing our knowlagein coding .</p>
+                    <p>Our group brought our minds together to create this website to encourage people to know that they can also do as much.</p>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-check-circle text-primary fs-4 me-3"></i>
+                            <span>Legit group with the best people of all time.</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-check-circle text-primary fs-4 me-3"></i>
+                            <span>Have created more than 500 successful group work.</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-primary fs-4 me-3"></i>
+                            <span>100% we had in most of our group works.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/600x400/667eea/FFFFFF?text=Team+Work" alt="About Group" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Get In Touch</h2>
+                <p class="text-muted">Have questions? We'd love to hear from you!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow">
+                        <div class="card-body p-5">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold">Your Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter your name">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-bold">Email Address</label>
+                                        <input type="email" class="form-control" placeholder="Enter your email">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Subject</label>
+                                    <input type="text" class="form-control" placeholder="Subject">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Message</label>
+                                    <textarea class="form-control" rows="4" placeholder="Write your message here..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 Team Connect. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Auto-update member count
+        document.addEventListener('DOMContentLoaded', function() {
+            const memberCards = document.querySelectorAll('.member-card');
+            const memberCountDisplay = document.getElementById('memberCount');
+            if (memberCountDisplay) {
+                memberCountDisplay.textContent = memberCards.length;
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>Group5 of AS3</title>
+</head>
+<body>
+  <h1>
+    Tge intellectuals
+  </h1>
+</body>
+</html>
